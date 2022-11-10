@@ -29,7 +29,7 @@ nightscout_ps1() {
 
 	# If the server is set to use mmol units get the scaled values
 	# and handle the delta calculation needing to support floating points
-	if [ "${displaySettings}" = "mmol" ]; then
+	if [ "${settings_units}" = "mmol" ]; then
 		bgl="${latest_entry_scaled}"
 		# use bc to work out the floating point delta
 		delta="$(bc <<< ${latest_entry_scaled}-${previous_entry_scaled})"
